@@ -9,8 +9,13 @@ def generate_sine_wave(frequency, duration, sample_rate):
     wave = np.sin(2 * np.pi * frequency * t)
     return wave
 
+
 wave = generate_sine_wave(1000, 2, 100)
+
 print(type(wave))
 print(wave.shape)
-print (wave)
-print("abdulla making changes in parallel to the smae file")
+#save the wave to a file
+np.save('sine_wave.npy', wave)
+loaded_wave = np.load('sine_wave.npy')
+print(loaded_wave)
+
